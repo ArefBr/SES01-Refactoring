@@ -49,6 +49,7 @@ public void addPre(Course c) {
 		return sb.toString();
 	}
 
+
 	public String getName() {
 		return name;
 	}
