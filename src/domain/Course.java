@@ -16,8 +16,15 @@ public class Course {
 		this.units = units;
 		prerequisites = new ArrayList<Course>();
 	}
-	
-	public void addPre(Course c) {
+
+public Course(Course c){
+		this.id = c.id;
+		this.name = c.name;
+		this.units = getUnits();
+		this.prerequisites = c.prerequisites;
+}
+
+public void addPre(Course c) {
 		getPrerequisites().add(c);
 	}
 
@@ -54,8 +61,7 @@ public class Course {
 		return id;
 	}
 
-	public boolean equals(Object obj) {
-		Course other = (Course)obj;
-		return id.equals(other.id);
+	public boolean equals(Course c) {
+		return id.equals(c.getId());
 	}
 }
